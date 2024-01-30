@@ -1,6 +1,8 @@
 package sunat.gob.pe.ejercicio03g7;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -43,6 +45,25 @@ public class App extends Application {
     	tabla.setSpacing(10);
     	Insets sangria = new Insets(10, 0, 0, 10);
     	tabla.setPadding(sangria);
+    	
+    	btnLogin.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				System.out.println("Bienvenido");
+				
+			}
+		});
+    	
+    	btnCancelar.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				txtUsuario.setText("");
+				txtPassword.setText("");
+				
+			}
+		});
     	
         var scene = new Scene(tabla, 250, 150);
         stage.setScene(scene);
